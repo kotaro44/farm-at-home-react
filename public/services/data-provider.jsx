@@ -1,5 +1,12 @@
 'use strict';
 
+/**
+ * Data Provider is a service that provides Data from the Backend to the Frontend, all functions return promises
+ *
+ * Services:
+ *   - getProducts(): returns a list of all available products
+ *   - getProduct(id): returns the detailed information of the product with that matches the id
+ */
 (function DataProvider() {
 	var host = 'https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/';
 

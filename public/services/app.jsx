@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * This is the main content that will be website, any view will be rendered inside 'div#view'
+ */
 (function app(){
   window.addEventListener('load', onload, false);
 

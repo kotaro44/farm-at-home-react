@@ -1,5 +1,15 @@
 'use strict';
 
+/**
+ * GruntFile confguration for ReactJS
+ *
+ * Deafult server: http://localhost:80
+ *
+ * All ReactJS code is written in JSX, that could produce some execution errors on certain browsers, so Grunt will
+ * concat all JSX files and generate an app.js file inside public that the index.html could use instead,
+ * also the livereload is listening to all JSX files so it will recompile the app.js file if any JSX files is modified,
+ * for any CSS modification the livereload will apply the changes in your browser without reloading
+ */
 module.exports = function exports(grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);

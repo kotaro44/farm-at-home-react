@@ -23,6 +23,11 @@ class FahProductCard extends React.Component {
       </div>
     );
 
+    /**
+     * The initial status of the components is the loading product status,
+     * so in case there is no product yet, we just return the default component
+     * otherwise we modify the variables to show the details.
+     */
     if (this.props.product) {
       if (this.props.product.image) {
         productImg = <img src={this.props.product.image} />;

@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * ReactJS already have a more powerful route controller, however using this more simple route controller
+ * we can have much more control about the behaviour of the app.
+ *
+ * all routes are specified at window.states object
+ */
 (function route() {
   window.addEventListener('hashchange', onHashChange, false);
   window.addEventListener('load', onload, false);
@@ -12,7 +18,7 @@
         component: ProductList,
       },
       'list/:param': {
-        name: '/list',
+        name: '/list/:param',
         component: ProductDetail,
       },
     };

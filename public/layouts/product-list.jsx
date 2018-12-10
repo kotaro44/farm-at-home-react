@@ -11,7 +11,7 @@ class ProductList extends React.Component {
       isLoading: true,
       productId: null,
       isDetailVisible: false,
-      placeholders: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      placeholders: (new Array(12)).join('|').split('|'), //this generates an array of X empty strings
     };
 
     this.loadData();
@@ -36,6 +36,10 @@ class ProductList extends React.Component {
       return;
     }
 
+    /**
+     * When we are checking the website from a mobile device, the product detail will be shown in another view
+     * otherwise we will open the modal with its details.
+     */
     if (window.Device.isMobile) {
       window.location.href = '#/list/' + productId;
     }
@@ -53,21 +57,29 @@ class ProductList extends React.Component {
   };
 
   render() {
-    var content = <span></span>;
     var errorMsg = <span></span>;
     var modal = <span></span>;
+    var content = (
+      <div className="row product-list-wrapper">
+        {this.state.placeholders.map((element, index) => {
+          return (
+            <span key={index} className="column product-placeholder">
+              <FahProductCard />
+            </span>
+          );
+        })}
+      </div>
+    );
 
-    if (!this.state.error) {
-      if (this.state.isLoading) {
-        content = (
-          <div className="row product-list-wrapper">
-            {this.state.placeholders.map((index) => {
-              return (
-                <span key={index} className="column product-placeholder">
-                  <FahProductCard />
-                </span>
-              )
-            })}
+    if (!this.state.isLoading) {
+      /**
+       * this message will appears if there was an error getting the data from the DataProvider
+       */
+      if (this.state.error) {
+        errorMsg = (
+          <div className="error-wrapper">
+            <img src="images/e.png" />
+            <div>We are so sorry, but there was an error trying to load the products...</div>
           </div>
         );
       }
@@ -89,38 +101,35 @@ class ProductList extends React.Component {
             })}
           </div>
         );
+
+        /**
+         * this message will appears if the DataProvider return 0 items but there was no any error
+         */
+        if (this.state.products && this.state.products.length === 0) {
+          errorMsg = (
+            <div className="error-wrapper">
+              <img src="images/e.png" />
+              <div>We are so sorry, but seems there are no available products for now.</div>
+            </div>
+          );
+        }
       }
-    }
 
-    if (!this.state.isLoading && this.state.error) {
-      errorMsg = (
-        <div className="error-wrapper">
-          <img src="images/e.png" />
-          <div>We are so sorry, but there was an error trying to load the products...</div>
-        </div>
-      );
-    }
-
-    if (!this.state.isLoading && this.state.products && this.state.products.length === 0) {
-      errorMsg = (
-        <div className="error-wrapper">
-          <img src="images/e.png" />
-          <div>We are so sorry, but seems there are no available products for now.</div>
-        </div>
-      );
-    }
-
-    if (this.state.productId) {
-      modal = (
-        <div className="modal-wrapper">
-          <div className="modal-content-wrapper">
-            <div className="close-btn" onClick={this.closeModal}>X</div>
-            <div className="modal-content">
-              <FahProductDetail productId={this.state.productId} inModal={true} />
+      /**
+       * When there is a productId we have to show the Modal with its details
+       */
+      if (this.state.productId) {
+        modal = (
+          <div className="modal-wrapper">
+            <div className="modal-content-wrapper">
+              <div className="close-btn" onClick={this.closeModal}>X</div>
+              <div className="modal-content">
+                <FahProductDetail productId={this.state.productId} inModal={true} />
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      }
     }
 
     return (

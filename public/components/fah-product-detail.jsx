@@ -36,29 +36,27 @@ class FahProductDetail extends React.Component {
   render() {
     var wrapperClass = 'row product-detail';
     var image = <img className="detail-img-placeholer" src="images/p.gif" />;
-    var imageContent = <span></span>;
-    var productName = <img src={this.state.loaderSrc} />;
+    var name = <img src={this.state.loaderSrc} />;
     var description = <img src={this.state.loaderSrc} />;
     var price = <img src={this.state.loaderSrc} />;
 
+    /**
+     * The initial status of the components is the loading product details status,
+     * so in case there is no product yet, we just return the default component
+     * otherwise we modify the variables to show the details.
+     */
     if (!this.state.isLoading) {
       if (this.state.error) {
         image = <img ng-if="vm.error" src="images/e.png" />;
-        productName = <span>Error</span>;
+        name = <span>Error</span>;
         description = <span>We are sorry, but we were not able to get data back from the server...</span>;
         price = <span></span>;
       }
       else {
-        productName = <span>{this.state.product.name || '???'}</span>;
+        name = <span>{this.state.product.name || '???'}</span>;
         description = <span>{this.state.product.description || 'No Description'}</span>;
         price = <span>{Constants.currency + (this.state.product.price.toFixed(2) || '??')}</span>;
-
-        if (this.state.product.image) {
-          image = <img src={this.state.product.image} />
-        }
-        else {
-          image = <img src="images/u.png" />;
-        }
+        image = <img src={this.state.product.image || 'images/u.png'} />
       }
     }
 
@@ -74,7 +72,7 @@ class FahProductDetail extends React.Component {
         <div className="detail-content-wrapper">
           <div className="detail-content">
             <div className="detail-name-wrapper">
-              {productName}
+              {name}
             </div>
             <div className="detail-description-wrapper">
               {description}

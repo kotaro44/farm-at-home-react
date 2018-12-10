@@ -2,6 +2,16 @@
 
 /**
  * Reference: http://detectmobilebrowsers.com/
+ *
+ * This service provide information about the device the app is running, it add a property on the body
+ * of the document as follows:
+ *
+ * - Mobile or Tablet: <body is-mobile="true">...</body>
+ * - Desktop: <body is-mobile="false">...</body>
+ *
+ * also creates a Global variable that can be used inside the code as follows:
+ *
+ * - if (Device.isMobile) { ... }
  */
 (function device(){
   window.addEventListener('load', function onLoad() {
