@@ -1,0 +1,134 @@
+body {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin: 0;
+  padding: 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
+}
+
+.fixed-background {
+  background-image: url('../images/b.jpg');
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.view-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.view-wrapper .header-wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.view-wrapper .title {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 400;
+  margin: 27px 0 0 20px;
+}
+
+.view-wrapper .content-wrapper {
+  min-height: 85%;
+  padding: 100px 10px 30px 10px;
+}
+
+.view-wrapper .footer-wrapper {
+  background-color: #000000;
+  border-top: 1px solid #f3f3f3;
+  height: 80px;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.view-wrapper .footer-wrapper a {
+  color: lightblue;
+  font-weight: bold;
+}
+
+.view-wrapper .framework-wrapper {
+  bottom: 15px;
+  position: absolute;
+  right: 15px;
+}
+
+.view-wrapper .framework-wrapper img {
+  width: 150px;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  margin: auto;
+  max-width: 1280px;
+}
+
+.column {
+  -ms-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+
+body[is-mobile="true"] .view-wrapper .header-wrapper {
+  position: absolute;
+}
+
+body[is-mobile="true"] .view-wrapper .footer-wrapper {
+  height: 150px;
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+  .column {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  body[is-mobile] .row {
+    margin-left: auto;
+  }
+
+  .column {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+}

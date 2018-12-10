@@ -1,0 +1,21 @@
+{
+  "name": "farm-at-home-react",
+  "description": "Sample page of a supermarket build using ReactJS",
+  "main": "index.html",
+  "authors": [
+    "Carlos Amilcar Sanchez Rosa (https://kotaro44.github.com)"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "16.1.0",
+    "babel-standalone": "6.19.0"
+  }
+}
