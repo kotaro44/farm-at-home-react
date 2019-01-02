@@ -12,13 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/kotaro44/farm-at-home-react.git"
   },
-  "dependencies": {
-    "farm-at-home-backend": "https://github.com/kotaro44/farm-at-home-backend.git",
-    "react": "16.7.0",
-    "react-dom": "16.7.0",
-    "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.2"
-  },
   "scripts": {
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -26,6 +19,13 @@
     "frontend-server": "react-scripts start",
     "backend-server": "fah-backend -p 3000",
     "start": "npm run backend-server | npm run frontend-server"
+  },
+  "dependencies": {
+    "farm-at-home-backend": "https://github.com/kotaro44/farm-at-home-backend.git",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.1.2"
   },
   "browserslist": [
     ">0.2%",
