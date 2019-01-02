@@ -14,7 +14,7 @@ To start the App run the following command:
 $ npm start
 ```
 
-The command will run simultaneously the Backend server by default on port 3000 and the frontend on port 80,
+The command will run simultaneously the Backend server by default on port 3000 and the frontend on port 8080,
 so you can access both services from http://localhost
 
 ## requirements

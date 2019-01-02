@@ -16,9 +16,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "frontend-server": "react-scripts start",
-    "backend-server": "fah-backend -p 3000",
-    "start": "npm run backend-server | npm run frontend-server"
+    "frontend": "react-scripts start",
+    "backend": "fah-backend -p 3000",
+    "start": "npm run backend | npm run frontend"
   },
   "dependencies": {
     "farm-at-home-backend": "https://github.com/kotaro44/farm-at-home-backend.git",
