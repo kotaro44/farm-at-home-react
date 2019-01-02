@@ -1,23 +1,36 @@
 {
   "name": "farm-at-home-react",
   "version": "1.0.0",
-  "author": "Carlos Amilcar Sanchez Rosa (https://kotaro44.github.com)",
   "description": "Sample page of a supermarket build using ReactJS",
-  "main": "public/index.html",
-  "scripts": {
-    "postinstall": "bower install",
-    "start": "grunt serve"
-  },
   "license": "ISC",
+  "author": {
+    "name": "Carlos Amilcar Sanchez Rosa",
+    "email": "csanchezrhn@gmail.com",
+    "website": "http://kotaro44.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotaro44/farm-at-home-react.git"
+  },
   "dependencies": {
-    "bower": "1.8.4",
-    "grunt": "1.0.3",
-    "grunt-contrib-connect": "0.7.1",
-    "grunt-contrib-watch": "1.1.0",
-    "grunt-include-files": "0.5.3",
-    "grunt-react": "^0.12.3",
-    "grunt-wiredep": "3.0.1",
-    "load-grunt-tasks": "4.0.0",
-    "time-grunt": "2.0.0"
-  }
+    "farm-at-home-backend": "https://github.com/kotaro44/farm-at-home-backend.git",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.1.2"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "frontend-server": "react-scripts start",
+    "backend-server": "fah-backend -p 3000",
+    "start": "npm run backend-server | npm run frontend-server"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

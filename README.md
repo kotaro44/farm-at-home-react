@@ -5,13 +5,17 @@ This is an ReactJS Demo, to run the project you only need to clone the repositor
 ```javascript
 $ npm install
 ```
-The command will generate the index.html of the app, so to deploy the website just run:
+The command will install the backend repository for this project from: https://github.com/kotaro44/farm-at-home-backend.git
+and ReactJS libraries.
+
+To start the App run the following command:
 
 ```javascript
 $ npm start
 ```
 
-Once the waiting message appears, the website should be accesible through your browser by http://localhost
+The command will run simultaneously the Backend server by default on port 3000 and the frontend on port 80,
+so you can access both services from http://localhost
 
 ## requirements
 * NodeJs v8.11.3 or higher
