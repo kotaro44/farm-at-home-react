@@ -135,7 +135,7 @@ class ProductDetail extends Component {
                 </div>
                 <div className="detail-price-wrapper">
                   <span ng-if="!vm.isLoading && !vm.error">
-                    {Constants + (parseFloat(data.price).toFixed(2) || '??')}
+                    {Constants.currency + (parseFloat(data.price).toFixed(2) || '??')}
                   </span>
                 </div>
               </div>
