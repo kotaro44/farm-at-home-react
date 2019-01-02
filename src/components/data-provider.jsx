@@ -5,7 +5,7 @@ class DataProvider extends Component {
     super(props);
 
     this.state = {
-      host: window.location.origin + ':3000/',
+      host: window.location.origin.replace(/:\d+/, '') + ':3000/',
       isLoading: true,
       data: null,
       error: null,
